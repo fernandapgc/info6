@@ -2,6 +2,7 @@
 
 @section('content')
 @include('fragments.validation-errors')
+@include('fragments.sesion')
 <form method="post" action="{{route("post.store")}}" >
   @csrf
     <div class="form-group">
