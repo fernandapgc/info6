@@ -16,8 +16,11 @@ class PostController extends Controller
     public function index()
     {
         //
-        return view('dashboard.posts');
-    }
+        $posts = Posts::get();
+       // dd($posts);
+        return view('dashboard.post.posts', [
+            'posts' => $posts]);  //Puedo poner coma y mandar varias vistas
+    }       //Poner los mismos nombres
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +30,7 @@ class PostController extends Controller
     public function create()
     {
         //
-        return view('dashboard.posts');
+        return view('dashboard.post.create');
     }
 
     /**
