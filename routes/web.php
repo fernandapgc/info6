@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\CategoriasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -19,7 +20,10 @@ Route::get('/', function () {
 });
 
 Route::resource('/post', PostController::class );
+Route::resource('/categoria', CategoriasController::class );
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
