@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\dashboard\CategoriasController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -18,9 +18,13 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::middleware(['admin'])->group(function () {
+    Route::resource('/post', PostController::class );
+    Route::resource('/categy', CategoryController::class );
 
-Route::resource('/post', PostController::class );
-Route::resource('/categoria', CategoriasController::class );
+});
+
+
 
 Auth::routes();
 
