@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 Route::middleware(['admin'])->group(function () {
     Route::resource('/post', PostController::class );
-    Route::resource('/categy', CategoryController::class );
+    Route::resource('/category', CategoryController::class );
 
 });
 
